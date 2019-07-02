@@ -130,12 +130,8 @@ static class BuildCommand
 		//EditorSetup.AndroidSdkRoot = getEnv ("ANDROID_SDK_HOME");
 		//EditorSetup.JdkRoot = getEnv ("JAVA_HOME");
 		//EditorSetup.AndroidNdkRoot = getEnv ("ANDROID_NDK_HOME");
-		var buildTarget = GetBuildTarget();
-		var buildPath = GetBuildPath();
-		var buildName = GetBuildName();
-		var fixedBuildPath = GetFixedBuildPath(buildTarget, buildPath, buildName);
 
-		BuildPipeline.BuildPlayer(GetEnabledScenes(), fixedBuildPath, buildTarget, GetBuildOptions());
+		BuildPipeline.BuildPlayer(GetEnabledScenes(), "/Build/", BuildTarget.Android, GetBuildOptions());
 		Console.WriteLine(":: Done with build");
 	}
 }
